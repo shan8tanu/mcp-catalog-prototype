@@ -1,0 +1,127 @@
+{
+ "title": "MCP 'help me choose' prototype: data snapshot",
+ "unofficial": "Independent prototype for an assignment. Not affiliated with or endorsed by TrueFoundry.",
+ "sources": {
+  "catalog_snapshot": {
+   "what": "Public list and all 1,368 detail records from https://mcp-api.truefoundry.com/api/mcps",
+   "taken": "2026-09-27 (IST)"
+  },
+  "gateway_check": {
+   "what": "Tool discovery through the catalog's own gateway path, for the 680 entries labeled No Auth, with a retry of failures",
+   "at": "2026-09-26T20:09:49.376813+00:00"
+  },
+  "direct_check": {
+   "what": "Direct MCP connection to every server URL without credentials: initialize, then tools/list if public, or OAuth protected-resource metadata if login is required. One retry for failures. No tool was ever called.",
+   "at": "2026-09-26T21:55:15+00:00"
+  },
+  "official_registry": {
+   "what": "Full listing of registry.modelcontextprotocol.io (121,343 server versions) matched to catalog servers by remote URL",
+   "at": "2026-09-26"
+  },
+  "manual_review": {
+   "what": "Provider documentation for the servers in the five developer journeys (Microsoft Learn, Ahrefs, Abbyseo, MetricSpot, Exa, Atlassian, GitHub, AgenticTotem, Find Me)",
+   "at": "2026-09-27"
+  }
+ },
+ "counts": {
+  "servers": 1368,
+  "login_claimed_vs_observed": {
+   "API Key -> credentials": 82,
+   "API Key -> none": 57,
+   "API Key -> oauth": 31,
+   "API Key -> unknown": 21,
+   "No Auth -> credentials": 5,
+   "No Auth -> none": 581,
+   "No Auth -> oauth": 13,
+   "No Auth -> unknown": 81,
+   "OAuth2 -> credentials": 5,
+   "OAuth2 -> none": 17,
+   "OAuth2 -> oauth": 448,
+   "OAuth2 -> unknown": 27
+  },
+  "labeled_no_auth_but_login_required": 18,
+  "status": {
+   "up": 1217,
+   "failing": 114,
+   "not_checked": 11,
+   "up_direct_but_catalog_failed": 23,
+   "payment_or_quota": 3
+  },
+  "tools_visibility": {
+   "hidden": 586,
+   "verified": 655,
+   "catalog_only": 127
+  },
+  "verified_tools_total": 11913,
+  "verified_tools_with_server_declared_hints": 6773,
+  "servers_with_write_or_destructive_tools_verified": 305,
+  "servers_with_purchase_tools": 64,
+  "servers_with_price_in_a_tool_description": 27,
+  "cost": {
+   "unknown": 1190,
+   "free_tier": 3,
+   "mentions_pricing": 122,
+   "free_claimed": 47,
+   "per_call": 3,
+   "paid_plan": 1,
+   "free": 2
+  },
+  "operator": {
+   "verified_domain": 1281,
+   "vendor_documented": 9,
+   "vendor_domain": 21,
+   "verified_github": 13,
+   "verified_domain_elsewhere": 25,
+   "truefoundry_hosted": 13,
+   "unverified": 2,
+   "truefoundry_demo": 4
+  },
+  "matched_in_official_registry": 1327,
+  "tool_definition_tokens_estimate": {
+   "median": 2354,
+   "p90": 16678,
+   "max": 272151
+  },
+  "oauth_metadata": {
+   "published": 492,
+   "with_scopes": 346,
+   "with_docs_link": 122
+  },
+  "catalog_categories": {
+   "Utilities": 692,
+   "Search": 226,
+   "Finance": 88,
+   "Communication": 83,
+   "Dev Tools": 83,
+   "Project Management": 61,
+   "Database": 25,
+   "Documentation": 25,
+   "CRM": 25,
+   "Monitoring": 23,
+   "Productivity": 21,
+   "Developer Tools": 2,
+   "Browser": 2,
+   "SEO": 1,
+   "Research": 1,
+   "DevOps": 1,
+   "Location": 1,
+   "AI & ML": 1,
+   "Data Science": 1,
+   "none": 1,
+   "Security": 1,
+   "Infrastructure": 1,
+   "Data": 1,
+   "Knowledge": 1,
+   "Social Media": 1
+  }
+ },
+ "caveats": [
+  "Every check is point-in-time. 'Failing' means failed twice minutes apart, not permanently dead.",
+  "A tool list readable without login does not mean every tool works without login.",
+  "Tool access labels marked 'declared' come from the server itself; the MCP spec says to treat them as untrusted hints. Labels marked 'inferred' are guessed from the tool name.",
+  "Cost labels are verified only for manually reviewed servers and servers that answered HTTP 402. 'Mentions pricing' is an unverified keyword signal.",
+  "'Owner verified' means the publisher proved control of a domain or GitHub account in the official MCP Registry. It does not by itself prove the publisher is the brand named on the card.",
+  "Estimated tokens = characters of the tool definitions divided by 4; a rough indicator only.",
+  "11 servers could not be checked from our network; they are shown as 'not checked', not as failing."
+ ]
+}

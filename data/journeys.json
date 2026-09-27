@@ -1,0 +1,56 @@
+[
+  {
+    "id": "J1",
+    "title": "Find a server to search Microsoft documentation",
+    "query": "microsoft docs",
+    "servers": ["microsoft-learn-mcp", "microsoft-mcp"],
+    "before": "Searching 'microsoft docs' returns zero results. Searching 'microsoft' finds two listings with the same URL and the same three tools.",
+    "after": "Microsoft Learn appears in the top 3, with 'Same server as Microsoft Learn MCP'. Row: Up, No login, 3 tools, owner verified, Free.",
+    "enhancements": ["E1", "E9"]
+  },
+  {
+    "id": "J2",
+    "title": "Choose an SEO audit tool",
+    "query": "seo audit",
+    "servers": ["ahrefs-mcp", "abbyseo-mcp", "metricspot-mcp"],
+    "before": "The SEO category shows Ahrefs only; 'seo' misses MetricSpot; MetricSpot hides its tools behind an API key; prices are scattered.",
+    "after": "All three appear. Compare shows: Ahrefs OAuth + paid plan; Abbyseo no login + free tier with a purchase tool; MetricSpot tools listed without a key + free tier.",
+    "enhancements": ["E1", "E8", "E6", "E3"]
+  },
+  {
+    "id": "J3",
+    "title": "Assess a paid web-extraction server",
+    "query": "extract structured data from web pages",
+    "servers": ["agentictotem-mcp"],
+    "before": "Labeled No Auth; the $0.01 USDC per URL price is only inside a tool description.",
+    "after": "Row shows Login 'No login' and Cost 'Per call'.",
+    "enhancements": ["E6"]
+  },
+  {
+    "id": "J4",
+    "title": "Try a search server that fails in the catalog",
+    "query": "web search",
+    "servers": ["exa-mcp"],
+    "before": "Labeled No Auth; the catalog page shows 'Gateway rejected the request'; the configured URL returns 401.",
+    "after": "Row shows the red chip 'Listed as No Auth · needs login' and status 'Up · catalog can't connect'.",
+    "enhancements": ["E3", "E2"]
+  },
+  {
+    "id": "J5",
+    "title": "Understand access before connecting to Confluence",
+    "query": "confluence",
+    "servers": ["confluence-mcp", "atlassian-mcp"],
+    "before": "OAuth required before any tools are shown; the listing shares the Atlassian endpoint, which includes Jira write tools.",
+    "after": "Server page shows 'Same server as Atlassian', tool names with write tags, and permissions requested before login, including write:jira-work.",
+    "enhancements": ["E7", "E9"]
+  },
+  {
+    "id": "J6",
+    "title": "Check who really runs a big-brand listing",
+    "query": "google workspace",
+    "servers": ["google-workspace-mcp"],
+    "before": "Provider shows 'Google', but the server runs on TrueFoundry's infrastructure.",
+    "after": "Owner column says 'Hosted by TrueFoundry'.",
+    "enhancements": ["E5"]
+  }
+]

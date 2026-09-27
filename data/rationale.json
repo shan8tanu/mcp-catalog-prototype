@@ -1,0 +1,94 @@
+{
+  "_note": "Reference for the write-up (PDF). Not loaded by the app.",
+  "framing": {
+    "goal": "Make the registry the place a developer goes to decide which MCP server to adopt, not just browse a list.",
+    "approach": "Keep today's catalog as it is and add a small set of enhancements where the information is thin or wrong. Each enhancement answers one of the five questions from Q1 and fixes a problem found in Q2.",
+    "five_questions": ["Does it do my job?", "Do I trust who runs it?", "Does it work today?", "Can I connect it safely?", "What will it cost me?"]
+  },
+  "enhancements": [
+    {
+      "id": "E1",
+      "title": "Search finds servers by what they do",
+      "question": "Does it do my job?",
+      "before": "Search matches names and providers only. 'seo' misses MetricSpot even though its description says SEO; 'microsoft docs' and 'figma' return nothing although matching servers exist.",
+      "after": "Search also covers descriptions, tool names and tool descriptions, with a small synonym list. All words must match. A row matched through a tool says which tool.",
+      "evidence": "Q2 problem 6 (search and taxonomy). Tool descriptions are available for 655 servers from the direct check."
+    },
+    {
+      "id": "E2",
+      "title": "Status column and a 'Working now' filter",
+      "question": "Does it work today?",
+      "before": "No status anywhere. A developer finds out a server is down only after trying to connect.",
+      "after": "Each row shows Up, Failing, 'Up · catalog can't connect', or Not checked. Failing servers are hidden by default, not deleted, with a visible 'N hidden' count.",
+      "evidence": "Q2 problem 2: 93 of 680 No Auth servers failed twice minutes apart; 114 of 1,368 failed the direct check twice; 23 work directly but fail through the catalog's own connection."
+    },
+    {
+      "id": "E3",
+      "title": "Login shows what the server actually did",
+      "question": "Can I connect it safely?",
+      "before": "The auth badge is a hand-entered label. 18 servers labeled No Auth ask for a login when connected; 31 labeled API key actually use OAuth.",
+      "after": "The Login column shows what happened when we connected, with a small checkmark. When the catalog label is wrong, the row shows one red chip: 'Listed as No Auth · needs login'.",
+      "evidence": "Q2 problem 1 (wrong authentication or connection configuration); Exa journey."
+    },
+    {
+      "id": "E4",
+      "title": "Tools column with risk flags",
+      "question": "Does it do my job? / Can I connect it safely?",
+      "before": "617 entries show no tools before connecting; nothing says whether a tool can change data or spend money.",
+      "after": "Tool count per row, plus 'can write' or 'can spend money' when relevant. 'After login' when the list is hidden.",
+      "evidence": "Q2 problem 3. 655 servers list tools openly; 305 have tools that can change data; 64 have purchase tools."
+    },
+    {
+      "id": "E5",
+      "title": "Owner instead of Provider",
+      "question": "Do I trust who runs it?",
+      "before": "'Provider' is usually just the domain name. 'Google Workspace' (provider: Google) and 'Playwright' (provider: Microsoft) run on TrueFoundry's servers; Postgres and Filesystem are demos.",
+      "after": "Owner column: the verified domain with a checkmark, 'Hosted by TrueFoundry', 'Demo', or 'Unverified'.",
+      "evidence": "Q2 problem 4. 1,327 servers match an Official MCP Registry entry with proven domain or GitHub ownership."
+    },
+    {
+      "id": "E6",
+      "title": "Cost, only when known",
+      "question": "What will it cost me?",
+      "before": "Cost is invisible or buried in tool descriptions. AgenticTotem is labeled No Auth but charges $0.01 USDC per URL.",
+      "after": "A Cost column shows Free, Free tier, Paid plan or Per call where verified; otherwise a dash.",
+      "evidence": "Q2 problem 5 (price and payment semantics)."
+    },
+    {
+      "id": "E7",
+      "title": "More useful server page",
+      "question": "Can I connect it safely?",
+      "before": "Tools are hidden behind 'Connect to view tools' for login servers; no permissions; no config for a client like Cursor.",
+      "after": "Tool descriptions with a tag only for write, destructive or spends-money tools; permissions requested before login (write scopes highlighted); a copy-ready Cursor config and the TrueFoundry Gateway option.",
+      "evidence": "Confluence publishes its OAuth scopes before login, including write:jira-work. 346 servers publish their scopes."
+    },
+    {
+      "id": "E8",
+      "title": "Compare up to three servers",
+      "question": "All five",
+      "before": "No way to compare; developers open tabs.",
+      "after": "Six rows: status, login, owner, tools, permissions, cost. Only rows that differ are highlighted.",
+      "evidence": "SEO journey: Ahrefs, Abbyseo and MetricSpot differ on login, cost and free path, which today can't be seen side by side."
+    },
+    {
+      "id": "E9",
+      "title": "'Same server as' note",
+      "question": "Does it do my job?",
+      "before": "Microsoft Learn appears twice; Confluence and Atlassian share one endpoint.",
+      "after": "A quiet 'Same server as X' line under the name. Nothing is merged or deleted.",
+      "evidence": "Q2 problem 7 and its 'ignore' rule (the two Tandems are different servers)."
+    }
+  ],
+  "kept": [
+    {"title": "Search box, filter dropdowns, table, sortable headers", "why": "Familiar and fast; we improve what they contain."},
+    {"title": "Category and auth filters", "why": "Kept; auth now reflects the check."},
+    {"title": "'Try it' and the playground", "why": "The catalog's best feature; every row still links to it."},
+    {"title": "Scan for security issues", "why": "Linked from each server page."},
+    {"title": "One page per server", "why": "Same structure, with more decision-relevant detail."}
+  ],
+  "not_added": [
+    "No overall score or grade: it hides the reason and mixes fresh and stale data.",
+    "No GitHub stars or popularity sort: most servers are hosted with no public code, and we have no usage data.",
+    "No explanation inside the app: the reasoning lives in the write-up."
+  ]
+}

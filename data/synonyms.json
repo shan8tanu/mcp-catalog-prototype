@@ -1,0 +1,129 @@
+{
+  "_note": "Query expansion for search. If a query word is a key, also accept its values (whole words). Keep small and reviewable.",
+  "docs": [
+    "documentation",
+    "learn"
+  ],
+  "documentation": [
+    "docs",
+    "learn"
+  ],
+  "microsoft docs": [
+    "microsoft learn",
+    "azure docs",
+    "microsoft_docs_search"
+  ],
+  "seo": [
+    "search engine optimization",
+    "backlinks",
+    "keywords",
+    "site audit",
+    "serp",
+    "ranking"
+  ],
+  "audit": [
+    "scan",
+    "check",
+    "analyze"
+  ],
+  "jira": [
+    "atlassian",
+    "issues",
+    "tickets"
+  ],
+  "confluence": [
+    "atlassian",
+    "wiki"
+  ],
+  "wiki": [
+    "confluence",
+    "notion",
+    "knowledge base"
+  ],
+  "figma": [
+    "design",
+    "ui design",
+    "prototype"
+  ],
+  "github": [
+    "git",
+    "repository",
+    "pull request",
+    "issues"
+  ],
+  "web search": [
+    "search the web",
+    "serp",
+    "browse",
+    "crawl"
+  ],
+  "scrape": [
+    "extract",
+    "crawl",
+    "web page",
+    "fetch"
+  ],
+  "extract": [
+    "scrape",
+    "parse",
+    "structured data"
+  ],
+  "database": [
+    "sql",
+    "postgres",
+    "mysql",
+    "query"
+  ],
+  "sql": [
+    "database",
+    "postgres",
+    "query"
+  ],
+  "email": [
+    "gmail",
+    "mail",
+    "inbox",
+    "smtp"
+  ],
+  "calendar": [
+    "schedule",
+    "events",
+    "meeting"
+  ],
+  "payments": [
+    "stripe",
+    "checkout",
+    "invoice",
+    "billing"
+  ],
+  "crm": [
+    "hubspot",
+    "salesforce",
+    "leads",
+    "contacts"
+  ],
+  "browser": [
+    "playwright",
+    "headless",
+    "automation",
+    "navigate"
+  ],
+  "crypto": [
+    "blockchain",
+    "token",
+    "wallet",
+    "defi"
+  ],
+  "monitoring": [
+    "observability",
+    "logs",
+    "metrics",
+    "alerts"
+  ],
+  "tickets": [
+    "issues",
+    "jira",
+    "linear",
+    "support"
+  ]
+}
